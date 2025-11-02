@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Codex-Central</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estilo customizado para o tema steampunk */
+    body {
+      background: radial-gradient(circle at center, #2b2118 0%, #1a130d 100%);
+      background-image: url('caminho/para/seu-wallpaper.jpg'); /* coloque aqui seu wallpaper */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .gear-border {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gear-border::before {
+      /*content: "---";*/
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(163, 113, 42, 0.7);
+      border-radius: 12px;
+      filter: drop-shadow(0 0 5px #a3732a);
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 5px #a3732a; }
+      to { box-shadow: 0 0 15px #d4af37; }
+    }
+
+    .title-shadow {
+      text-shadow: 0 0 5px #a3732a, 0 0 10px #d4af37;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center text-white relative">
+
+  <!-- Sobreposição escura -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Container principal -->
+  <div class="relative w-full max-w-md gear-border bg-[#1c1611]/90 backdrop-blur-sm border border-[#a3732a]/50 rounded-xl shadow-[0_0_25px_rgba(163,115,42,0.6)] p-8">
+
+    <!-- Cabeçalho -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl font-bold tracking-[0.3em] text-[#d4af37] title-shadow">
+        Codex-Central
+      </h1>
+      <p class="text-lg text-[#caa56a] mt-2 italic font-serif">A Arca</p>
+    </div>
+
+    <!-- Formulário -->
+    <form id="loginForm" class="space-y-6">
+      <div>
+        <label for="username" class="block text-sm font-semibold text-[#caa56a] mb-1">Identificação</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username" 
+          required 
+          class="w-full px-4 py-2 bg-[#2d2317] border border-[#a3732a]/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] text-[#f5deb3] placeholder-gray-400"
+          placeholder="Digite seu usuário"
+        />
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-semibold text-[#caa56a] mb-1">Senha</label>
+        <input 
+          type="password" 
+          id="password" 
+          name="password" 
+          required 
+          class="w-full px-4 py-2 bg-[#2d2317] border border-[#a3732a]/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#d4af37] text-[#f5deb3] placeholder-gray-400"
+          placeholder="Digite sua senha"
+        />
+      </div>
+
+      <button 
+        type="submit" 
+        class="w-full py-2 bg-gradient-to-r from-[#a3732a] via-[#d4af37] to-[#a3732a] hover:brightness-110 text-black font-bold rounded-lg transition-all duration-200 shadow-md"
+      >
+        Acessar a Arca
+      </button>
+
+      <p id="loginMessage" class="text-center mt-4 text-sm font-semibold hidden"></p>
+    </form>
+
+    <!-- Rodapé -->
+    <div class="text-center text-xs text-[#8c7c52] mt-6">
+      <p>© 2025 Codex-Central. Forjado em bronze e vapor.</p>
+    </div>
+  </div>
+
+  <!-- Script de Login -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("loginMessage");
+
+      // Usuário e senha válidos (pode mudar)
+      const validUser = "admin";
+      const validPassword = "1234";
+
+      if (username === validUser && password === validPassword) {
+        message.classList.remove("text-red-400", "hidden");
+        message.classList.add("text-green-400");
+        message.textContent = "Acesso autorizado... abrindo portões da Arca ⚙️";
+
+        setTimeout(() => {
+          window.location.href = "pagina-principal.html";
+        }, 1500);
+      } else {
+        message.classList.remove("hidden", "text-green-400");
+        message.classList.add("text-red-400");
+        message.textContent = "⚠️ Identificação incorreta. Tente novamente.";
+      }
+    });
+  </script>
+</body>
+</html>

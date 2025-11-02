@@ -1,0 +1,45 @@
+.cabecalho-ficha {
+  border: 2px solid #444;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #222;
+  border-radius: 8px;
+}
+
+.linha-cabecalho {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.campo-grande,
+.campo-medio {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-grande {
+  flex: 2;
+}
+
+.campo-medio {
+  flex: 1;
+}
+
+.campo-grande label,
+.campo-medio label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #ccc;
+}
+
+.campo-grande input,
+.campo-medio input {
+  padding: 6px;
+  font-size: 0.9rem;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+  border-radius: 4px;
+}

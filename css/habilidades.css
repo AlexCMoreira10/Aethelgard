@@ -1,0 +1,85 @@
+body {
+  background: #131313;
+  color: #f5f5dc;
+  font-family: 'Crimson Text', serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('../img/fundo-steampunk.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Container principal */
+.container {
+  background: rgba(15, 15, 15, 0.8); /* Transparência para ler sobre o wallpaper */
+  max-width: 960px;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #e0c97f;
+}
+
+/* Seções */
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  border-bottom: 2px solid #e0c97f;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #e0c97f;
+}
+
+/* Cartões de habilidade */
+.skill {
+  background-color: #1f1f1f;
+  border-left: 4px solid #e0c97f;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00000066;
+}
+
+.skill h3 {
+  margin-top: 0;
+  color: #ffd369;
+}
+
+.skill p {
+  margin: 0.3rem 0;
+}
+
+ul {
+  list-style: "-  ";
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .skill h3 {
+    font-size: 1.1rem;
+  }
+}
